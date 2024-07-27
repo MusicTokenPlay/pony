@@ -1,0 +1,320 @@
+body {
+    max-width: 600px;
+    max-height: 900px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    background: url('img/ask3.png');
+    background-size: cover;
+    background-position: center;
+}
+
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('img/a1.png');
+    background-size: cover;
+}
+
+.container {
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) and (max-height: 900px) {
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    position: relative;
+}
+
+header .user-info {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#apli01 {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fa96c5;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+    padding: 5px;
+    z-index: 3;
+    position: relative;
+    border: 2px solid #f7abce;
+    border-radius: 20px;
+}
+
+#apli01 table {
+    width: 50%;
+    color: white;
+    table-layout: fixed;
+}
+
+#apli01 table img {
+    width: 35px;
+    height: 35px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+#apli01 table td {
+    font-size: 26px;
+    color: #912658;
+    padding: 0;
+    text-align: left;
+    vertical-align: middle;
+}
+
+#apli03 {
+    height: 80px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 5px;
+}
+
+#apli03 .button {
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    background-position: center;
+    
+    border-radius: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#apli02 {
+    flex: 1;
+    background-color: transparent;
+    overflow: hidden;
+    position: relative;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#bit1 {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#bit1 .box {
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    background-position: center;
+    
+    border-radius: 50%;
+    position: relative;
+}
+
+.box1 {
+    opacity: 0; /* Сначала невидим */
+    pointer-events: none; /* Некликабельно */
+    transition: opacity 0.5s;
+    background-image: none;
+}
+
+.box1.progressing {
+    opacity: 1; /* Видимый при наборе прогресса */
+    background-image: url('img/top_st2.png'); /* Изображение при наборе прогресса */
+}
+
+.box1.active {
+    opacity: 1; /* Видимый и кликабельный */
+    pointer-events: auto;
+    background-image: url('img/top_st2.png'); /* Изображение при активации */
+}
+
+.box1_progress {
+    width: 0;
+    height: 100%;
+    background-color: transparent;
+    transition: width 0.5s;
+}
+
+#bit2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 70px);
+    width: 100%;
+}
+
+#bit2 .box_center {
+    width: 130px;
+    height: 130px;
+    background-image: url('img/top_center.png');
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #fc03df;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0; /* Make box_center invisible initially */
+}
+
+.sob {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.5;
+}
+
+#sob1 { transform: translate(-150px, -120px); }
+#sob2 { transform: translate(-90px, -130px); }
+#sob3 { transform: translate(-30px, -135px); }
+#sob4 { transform: translate(30px, -135px); }
+#sob5 { transform: translate(90px, -130px); }
+#sob6 { transform: translate(150px, -120px); }
+#sob7 { transform: translate(-150px, 120px); }
+#sob8 { transform: translate(-90px, 130px); }
+#sob9 { transform: translate(-30px, 135px); }
+#sob10 { transform: translate(30px, 135px); }
+#sob11 { transform: translate(90px, 130px); }
+#sob12 { transform: translate(150px, 120px); }
+
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: #d5225a;
+    color: white;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100; /* Sit on top */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 250px;
+    background: url('img/ask1.png');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #fc03df;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_content {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#modal_box01 .modal_circle {
+    width: 50px;
+    height: 50px;
+    background: url('img/bat3.png');
+    background-size: cover;
+    background-position: center;
+    border: 2px solid green;
+    border-radius: 50%;
+    margin: 10px;
+    color: transparent;
+    cursor: pointer;
+}
+
+#modal_box02 p {
+    margin: 0;
+    font-size: 22px;
+    text-align: center;
+}
+
+#modal_box03 {
+    flex-direction: column;
+    align-items: center;
+}
+
+.social_icon {
+    margin: 2px 0;
+    text-decoration: none;
+    color: #000;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#fly-number-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.fly-number {
+    position: absolute;
+    font-size: 30px;
+    color: #912658;
+    font-weight: bold;
+    animation: fly 1s ease-out forwards;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+@keyframes fly {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-300px);
+    }
+}
