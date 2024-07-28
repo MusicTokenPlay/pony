@@ -1,0 +1,24 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore node_modules folder (if you decide to use Node.js in the future)
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore local environment files
+.env
+
+# Ignore build directories (if you decide to use a build tool in the future)
+dist/
+build/
+
+# Ignore npm debug file
+npm-debug.log*
+
+# Ignore yarn lock file
+yarn.lock
+
+# Ignore coverage folder (if you use a testing tool that generates coverage reports)
+coverage/
